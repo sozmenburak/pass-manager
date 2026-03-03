@@ -23,8 +23,8 @@ Uygulama arka planda ve sistem tepsisinde çalışır. Kapatmak için tray ikonu
 
 | İşlem | Windows | macOS |
 |-------|---------|--------|
-| Şifre listesini aç | `Ctrl+Alt+J` | `Cmd+Alt+J` |
-| Şifre kaydet | `Ctrl+Alt+Y` | `Cmd+Alt+Y` |
+| Şifre listesini aç | `Ctrl+J` | `Cmd+J` |
+| Şifre kaydet | `Ctrl+Y` | `Cmd+Y` |
 
 - **Aç**: Kısayola basınca fare imlecinin yanında arama penceresi açılır. Yazınca şifreler arasında arama yapılır; bir şifreye tıklayınca panoya kopyalanır.
 - **Kaydet**: Metni seçip kısayola basın; ad verip kaydedin. Şifre güvenli depoya eklenir.
