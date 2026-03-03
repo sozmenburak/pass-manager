@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şifre Kaydet</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 14px;
+      background: #1e1e2e;
+      color: #cdd6f4;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    label { display: block; margin-bottom: 4px; color: #a6adc8; font-size: 13px; }
+    input, textarea {
+      width: 100%;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      border: 1px solid #313244;
+      border-radius: 8px;
+      background: #181825;
+      color: #cdd6f4;
+      outline: none;
+    }
+    #password {
+      width: 100%;
+      min-width: 200px;
+      height: 56px;
+      resize: none;
+      overflow: auto;
+    }
+    .clipboard-btn {
+      display: block;
+      width: 100%;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      background: #313244;
+      color: #cdd6f4;
+      cursor: pointer;
+    }
+    .clipboard-btn:hover { background: #45475a; }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      background: #89b4fa;
+      color: #1e1e2e;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    button:hover { background: #b4befe; }
+    .hint { font-size: 11px; color: #6c7086; margin: 2px 0 0 0; }
+    .drag-bar {
+      -webkit-app-region: drag;
+      height: 28px;
+      margin: -16px -16px 8px -16px;
+      padding: 0 16px;
+      background: #181825;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .btn-close {
+      -webkit-app-region: no-drag;
+      width: 24px;
+      height: 24px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #a6adc8;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-close:hover { background: #313244; color: #cdd6f4; }
+    input, textarea, button, .hint { -webkit-app-region: no-drag; }
+  </style>
+</head>
+<body>
+  <div class="drag-bar"><button type="button" class="btn-close" id="btnClose" title="Kapat">×</button></div>
+  <label for="name">Ad</label>
+  <input type="text" id="name" placeholder="Kayıt adı" autocomplete="off" />
+  <label for="password">Şifre</label>
+  <textarea id="password" placeholder="Şifre"></textarea>
+  <button type="button" id="btnFromClipboard" class="clipboard-btn">Panodan al</button>
+  <p class="hint">Metni seç → Kaydet kısayoluna bas (otomatik kopyalanır). Gelmezse Ctrl+C yapıp "Panodan al"a tıkla.</p>
+  <button type="button" id="btnSave">Kaydet</button>
+  <script src="save.js"></script>
+</body>
+</html>

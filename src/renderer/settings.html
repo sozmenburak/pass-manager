@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayarlar</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 14px;
+      background: #1e1e2e;
+      color: #cdd6f4;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+    .drag-bar {
+      -webkit-app-region: drag;
+      height: 24px;
+      margin: -16px -16px 12px -16px;
+      padding: 0 16px;
+      background: #181825;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .btn-close {
+      -webkit-app-region: no-drag;
+      width: 24px;
+      height: 24px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #a6adc8;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-close:hover { background: #313244; color: #cdd6f4; }
+    input, button, .section label { -webkit-app-region: no-drag; }
+    h1 { font-size: 18px; margin: 0 0 16px; color: #cdd6f4; }
+    label { display: block; margin-bottom: 6px; color: #a6adc8; }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      border: 1px solid #313244;
+      border-radius: 8px;
+      background: #181825;
+      color: #cdd6f4;
+      outline: none;
+    }
+    input:focus { border-color: #89b4fa; }
+    .row { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
+    .row input { flex: 1; margin-bottom: 0; }
+    .content { flex: 1; min-height: 0; }
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #89b4fa;
+      color: #1e1e2e;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover { background: #b4befe; }
+    button.secondary { background: #313244; color: #cdd6f4; }
+    .hint { font-size: 12px; color: #6c7086; margin-top: 4px; }
+    .section { margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <div class="drag-bar"><button type="button" class="btn-close" id="btnClose" title="Kapat">×</button></div>
+  <div class="content">
+  <h1>Ayarlar</h1>
+  <div class="section">
+    <label for="shortcutOpen">Şifreleri aç (küçük pencere)</label>
+    <div class="row">
+      <input type="text" id="shortcutOpen" placeholder="Örn. Ctrl+J" readonly />
+      <button type="button" id="btnSetOpen" class="secondary">Değiştir</button>
+    </div>
+    <p class="hint">Varsayılan: Ctrl+J. Windows'ta sadece Shift+tuş çalışmaz; Ctrl veya Alt kullanın.</p>
+  </div>
+  <div class="section">
+    <label for="shortcutSave">Şifre kaydet (seçili metni al)</label>
+    <div class="row">
+      <input type="text" id="shortcutSave" placeholder="Örn. Ctrl+Y" readonly />
+      <button type="button" id="btnSetSave" class="secondary">Değiştir</button>
+    </div>
+    <p class="hint">Varsayılan: Ctrl+Y. Windows'ta sadece Shift+tuş çalışmaz; Ctrl veya Alt kullanın.</p>
+  </div>
+  <div class="section" id="sectionOpenAtLogin" style="display:none;">
+    <label class="row" style="cursor:pointer;margin-bottom:0;">
+      <input type="checkbox" id="openAtLogin" style="width:auto;margin:0 10px 0 0;" />
+      <span id="openAtLoginLabel">Başlangıçta başlat (oturum açıldığında)</span>
+    </label>
+  </div>
+  <div class="section">
+    <button type="button" id="btnSave">Kaydet ve kapat</button>
+  </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
